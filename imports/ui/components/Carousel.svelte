@@ -75,12 +75,13 @@
   $: likes = useTracker(() =>
     Likes.insert({
       liked: { newLike },
-    }).count()
+    })
   );
 
   function handleClick(event) {
     Likes.insert({
       liked: newLike,
+      createdAt: new Date(),
     });
     newLike = true;
   }
@@ -118,7 +119,7 @@
           class="heart"
           src="{heart}"
           alt="heart filled pink"
-          on:click|preventDefault="{handleClick}"
+          on:click="{handleClick}"
         />
 
         {/if}
