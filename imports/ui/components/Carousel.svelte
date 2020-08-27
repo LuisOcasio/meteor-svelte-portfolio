@@ -1,4 +1,6 @@
 <script>
+  import { useTracker } from "meteor/rdb:svelte-meteor-data";
+  import { Likes } from "../../api/likes";
   import { fly, fade } from "svelte/transition";
   let src = "/assets/svg/royalblueHeader.svg";
   let project1 = "/assets/projects/jaems.png";
@@ -67,6 +69,21 @@
   $: about = Object.values(projects_about[slide]);
 
   let user = { liked: true };
+
+  let newLike = true;
+
+  $: likes = useTracker(() =>
+    Likes.insert({
+      liked: newLike,
+    })
+  );
+
+  function handleClick(event) {
+    Resolutions.insert({
+      liked: newLike,
+    });
+    newRes = true;
+  }
 </script>
 
 <div class="carousel_wrapper">
