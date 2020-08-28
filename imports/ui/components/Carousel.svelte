@@ -68,22 +68,17 @@
   $: git = Object.values(projects_url[slide]);
   $: about = Object.values(projects_about[slide]);
 
-  let user = { liked: false };
+  let like = false;
+  let total = 0;
 
-  let newLike = true;
+  $: getLikes = useTracker(() => Likes.find({}).fetch());
 
-  $: likes = useTracker(() =>
+  function handleClick() {
     Likes.insert({
-      liked: { newLike },
-    })
-  );
-
-  function handleClick(event) {
-    Likes.insert({
-      liked: newLike,
+      like: true,
       createdAt: new Date(),
     });
-    newLike = true;
+    like = true;
   }
 </script>
 
@@ -110,18 +105,18 @@
       </div>
 
       <div class="like_section">
-        {#if user.liked}
+        {#if like}
         <p class="liked_title">Thanks for liking!</p>
         {:else}
         <p class="like_title">Like what you see? Give this page a like!</p>
+        <h5>{($getLikes.length)}</h5>
 
         <img
           class="heart"
           src="{heart}"
           alt="heart filled pink"
-          on:click="{handleClick}"
+          on:click|preventDefault="{handleClick}"
         />
-
         {/if}
       </div>
     </div>
@@ -129,7 +124,6 @@
     <div class="text-wrapper">
       <div class="text-section">
         <section class="section">
-          {likes}
           <h5 class="section_title">About this project</h5>
           <p class="section_paragraph">{about}</p>
         </section>
@@ -161,7 +155,8 @@
 
 <style>
   .heart {
-    width: 10%;
+    width: 1.5rem;
+    padding: 1rem;
   }
   .like_title {
     padding: 1rem;
