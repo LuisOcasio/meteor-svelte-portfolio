@@ -1,0 +1,7 @@
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "mongodb+srv://Myself:b9zhm9Ap8c9z7Rjr@cluster0.zghes.mongodb.net/portfolio-likes?retryWrites=true&w=majority"
+    }
+  }
+}

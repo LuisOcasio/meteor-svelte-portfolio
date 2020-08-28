@@ -1,6 +1,5 @@
 <script>
     import { onMount } from 'svelte'
-    import { Router, link } from 'svelte-routing'
 
     let showMobileMenu = false
 
