@@ -1,7 +1,8 @@
 {
   "galaxy.meteor.com": {
     "env": {
-      "MONGO_URL": "mongodb+srv://Myself:b9zhm9Ap8c9z7Rjr@cluster0.zghes.mongodb.net/portfolio-likes?retryWrites=true&w=majority"
+      "ROOT_URL": "http://www.luisocasio.dev",
+      "MONGO_URL": "mongodb+srv://MySelf:Gy0JdfGICbxaVQG6@cluster.h51ao.mongodb.net/portfolio?retryWrites=true&w=majority"
     }
   }
 }
