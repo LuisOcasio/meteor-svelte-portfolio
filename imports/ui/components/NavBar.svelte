@@ -4,7 +4,6 @@
     let showMobileMenu = false
 
     const navItems = [
-        { label: 'Home', href: '#' },
         { label: 'Skills', href: '#' },
         { label: 'Projects', href: '#' },
         { label: 'Contact', href: '#' },
@@ -57,7 +56,6 @@
         max-width: 1100px;
         padding-left: 20px;
         padding-right: 20px;
-        margin: auto;
         box-sizing: border-box;
         display: flex;
         align-items: center;
@@ -145,6 +143,9 @@
     .navbar-list li {
         list-style-type: none;
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .navbar-list li:before {
@@ -162,7 +163,7 @@
         align-items: center;
         padding: 0 10px;
         font-size: 13px;
-        width: 86.5%;
-        justify-content: flex-end;
+        width: 100%;
+        justify-content: center;
     }
 </style>
