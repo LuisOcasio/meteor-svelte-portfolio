@@ -1,5 +1,7 @@
 <script>
   let src = "./assets/svg/royalblueHeader.svg";
+  let img1 = "./assets/svg/littleguy.svg";
+  let img2 = "./assets/svg/kai.svg";
 </script>
 
 <div class="about_header">
@@ -12,30 +14,14 @@
 
 <div class="about_section">
   <section class="section">
-    <h5>SOME CONETENT</h5>
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ipsam rem
-      porro fugiat nemo! In fuga maxime nobis magni tenetur excepturi. Doloribus
-      neque totam doloremque quam voluptatem repudiandae, debitis rerum.
-    </p>
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ipsam rem
-      porro fugiat nemo! In fuga maxime nobis magni tenetur excepturi. Doloribus
-      neque totam doloremque quam voluptatem repudiandae, debitis rerum.
-    </p>
+    <img class="img1" src="{img1}" alt="pic of me" />
+    <img class="img1" src="{img2}" alt="pic of me" />
   </section>
 
   <section class="section">
-    <h5>A LITTLE MORE ABOUT ME</h5>
     <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ipsam rem
-      porro fugiat nemo! In fuga maxime nobis magni tenetur excepturi. Doloribus
-      neque totam doloremque quam voluptatem repudiandae, debitis rerum.
-    </p>
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ipsam rem
-      porro fugiat nemo! In fuga maxime nobis magni tenetur excepturi. Doloribus
-      neque totam doloremque quam voluptatem repudiandae, debitis rerum.
+      Welcome to my portfolio! My name is Luis Ocasio. I am fullstack web
+      developer from Pennsylvania.
     </p>
   </section>
 </div>
@@ -50,18 +36,23 @@
     /* border-bottom: 2px solid gray; */
     justify-content: space-between;
     font-size: small;
+    padding: 1rem;
+  }
+  .img1 {
+    width: 80%;
+    height: 80%;
   }
   .section {
-    width: 50%;
+    width: 100%;
     text-align: center;
-    padding: 3rem;
+    padding: 1rem;
+    display: flex;
   }
   .about_header {
     position: relative;
     text-align: center;
     color: white;
     background-color: #15202b;
-    /* border-top: 2px solid gray; */
   }
 
   .about_title {
