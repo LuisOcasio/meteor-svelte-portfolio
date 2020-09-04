@@ -164,24 +164,24 @@
     color: #d617bd;
   }
   .like_section {
-    height: 100%;
+    height: 90px;
   }
   .liked_title {
     color: #d617bd;
   }
   .carousel_wrapper {
-    height: 650px;
+    height: 100%;
   }
 
   .carousel {
     display: flex;
-    height: 100%;
+    height: 700px;
     width: 100%;
     background-color: #15202b;
   }
 
   .image_wrapper {
-    height: 71%;
+    height: 100%;
     width: 85%;
   }
 
@@ -191,15 +191,15 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 100%;
+    height: 90%;
     padding: 1.5rem;
   }
 
   .like_section {
-    height: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
   }
 
   .slide_title {
@@ -213,7 +213,7 @@
   .carousel-image {
     width: 80%;
     height: 80%;
-    padding: 3rem;
+    padding: 1.5rem;
   }
   .previous_wrapper {
     background-color: #21367f;

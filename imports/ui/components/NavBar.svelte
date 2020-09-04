@@ -28,16 +28,14 @@
         <h5>Full stack web developer</h5>
         <div
             on:click={handleMobileIconClick}
-            class={`mobile-icon${showMobileMenu ? ' active' : ''}`}
-        >
+            class={`mobile-icon${showMobileMenu ? ' active' : ''}`}        >
             <div class="middle-line" />
             <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
-                {#each navItems as item}
-                    <li>
-                        <a href={item.href}>{item.label}</a>
-                    </li>
-                {/each}
-            </ul>
+                <a href="#home">Top of Page</a>
+                <a href="#skills">Projects</a>
+                <a href="#about_me">About</a>
+                <a href="#hello">Contact</a>
+            </ul>    
         </div>
     </div>
 </nav>
@@ -46,7 +44,7 @@
     nav {
         width: 100%;
         background-color: #15202b;
-        height: 75px;
+        height: 85px;
         position: fixed;
         top: 0;
         z-index: 2;

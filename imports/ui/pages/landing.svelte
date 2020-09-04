@@ -10,14 +10,14 @@
 
 <div class="wrapper">
     <NavBar />
-    <div class="banner-section">
+    <div class="banner-section" id='home'>
         <img class="banner" alt={desc} src={src} />
     </div>
-<div class='photo_desc'>
+<div class='photo_desc' >
     <p>photo by: Luis Ocasio - Denver, CO 'RINO ART DISTRICT'</p>
 </div>
-    <div class="tech-icons">
-        <div class="icon-container">
+    <div class="tech-icons" >
+        <div class="icon-container" id="skills">
             <img
                 src="https://img.icons8.com/color/48/000000/javascript.png"
                 alt="javascript-logo"
@@ -69,7 +69,7 @@
         list-style-type: none;
     }
     .banner-section {
-        height: 650px;
+        height: 700px;
     }
     .banner {
         width: 100%;

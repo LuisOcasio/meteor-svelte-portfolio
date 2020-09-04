@@ -7,7 +7,7 @@
   <h1 class="header_title">Lets Keep In Touch</h1>
 </div>
 
-<footer>
+<footer id="hello">
   <form id="contact_form">
     <input type="name" placeholder="name" />
     <input type="email" placeholder="email" />
@@ -56,7 +56,7 @@
   footer {
     bottom: 0;
     width: 100%;
-    height: 650px;
+    height: 700px;
     background-color: #15202b;
     display: flex;
     flex-direction: column;
