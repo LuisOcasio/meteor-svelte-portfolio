@@ -20,8 +20,8 @@
 
   <section class="section">
     <p>
-      Welcome to my portfolio! My name is Luis Ocasio. I am fullstack web
-      developer from Pennsylvania.
+      Welcome to my portfolio! My name is Luis. I am fullstack web developer
+      from Pennsylvania.
     </p>
   </section>
 </div>
@@ -36,17 +36,19 @@
     /* border-bottom: 2px solid gray; */
     justify-content: space-between;
     font-size: small;
-    padding: 1rem;
+    line-height: 5rem;
+    justify-content: center;
   }
   .img1 {
     width: 80%;
     height: 80%;
   }
   .section {
-    width: 100%;
+    width: 45%;
     text-align: center;
     padding: 1rem;
     display: flex;
+    font-size: 1.5rem;
   }
   .about_header {
     position: relative;
