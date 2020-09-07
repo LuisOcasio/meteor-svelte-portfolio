@@ -51,7 +51,7 @@
     }
 
     .inner {
-        max-width: 1100px;
+        max-width: 100%;
         padding-left: 20px;
         padding-right: 20px;
         box-sizing: border-box;
