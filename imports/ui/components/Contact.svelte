@@ -16,11 +16,10 @@
 
   <form id="message_form">
     <input id="message_input" type="main_input" placeholder="message" />
+    <a class="submit_btn_wrapper" href="/">
+      <button>Submit</button>
+    </a>
   </form>
-
-  <a href="/">
-    <button>Submit</button>
-  </a>
 
   <p>Follow me across these social media platforms.</p>
 
@@ -89,6 +88,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  .submit_btn_wrapper {
+    padding: 1rem;
+  }
   #contact_form {
     width: 100%;
     display: flex;
@@ -98,11 +100,22 @@
   #message_form {
     width: 100%;
     display: flex;
-    justify-content: space-around;
     padding: 2rem;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
   }
   #message_input {
     height: 250px;
     width: 50%;
+  }
+  @media screen and (max-width: 768px) {
+    #contact_form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+    }
   }
 </style>

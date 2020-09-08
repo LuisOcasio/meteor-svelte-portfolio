@@ -52,21 +52,19 @@
     },
   ];
 
-  const technologies = [
-    {
-      id: 1,
-      project: [
-        "\nGatsby\nWordPress\nGraphql\nAWS-Services\namplify\nroute53    \nlightsail",
-      ],
-    },
-    { id: 2, project: ["\nspa\nreact\nsass\n"] },
-    { id: 3, project: ["\nreact\nmongoDB\nnode\nexpress\nsass\n"] },
-  ];
+  const technologies = {
+    0: ["Gatsby", "WordPress", "Graphql", "amplify", "route53", "lightsail"],
+
+    1: ["single page application", "React", "Mobile Resoponsive"],
+
+    2: ["React", "mongoDB", "node", "express", "sass"],
+  };
 
   $: project = Object.keys(projects[slide]);
   $: url = Object.values(projects[slide]);
   $: git = Object.values(projects_url[slide]);
   $: about = Object.values(projects_about[slide]);
+  $: tech_stack_list = Object.values(technologies[slide]);
 
   let like = false;
   let total = 0;
@@ -92,233 +90,290 @@
         on:click="{previous}"
       />
     </div>
+    <!-- slide section -->
+    <div class="slide_section">
+      <div class="main_slide">
+        <div class="slide">
+          <section class="slide_title">
+            <h5>{project}</h5>
+          </section>
 
-    <div class="slide">
-      <section class="slide_title">
-        <h5>{project}</h5>
-      </section>
-
-      <div class="image_wrapper">
-        {#each [Projects[index]] as src (index)} <img class="carousel-image"
-        alt="landing page of project" src={src} in:fly={{ x: -50, duration: 2000 }}
-        /> {/each}
-      </div>
-
-      <div class="like_section">
-        {#if like}
-        <p class="liked_title">Thanks for liking!</p>
-        {:else}
-        <p class="like_title">Like what you see? Give this page a like!</p>
-        <h5>{($getLikes.length)}</h5>
-
-        <img
-          class="heart"
-          src="{heart}"
-          alt="heart filled pink"
-          on:click|preventDefault="{handleClick}"
-        />
-        {/if}
-      </div>
-    </div>
-
-    <div class="text-wrapper">
-      <div class="text-section">
-        <section class="section">
-          <h5 class="section_title">About this project</h5>
-          <p class="section_paragraph">{about}</p>
-        </section>
-
-        <section class="section">
-          <h5 class="tech_title">Tech Stack used</h5>
-          <div class="stack_list_wrapper">
-            {#each [technologies[index]] as { id, project }}
-            <p>{project.map((e) => { return e.toString() })}</p>
-            {/each}
+          <div class="image_wrapper">
+            {#each [Projects[index]] as src (index)} <img class="carousel-image"
+            alt="landing page of project" src={src} in:fly={{ x: -50, duration: 2000 }}
+            /> {/each}
           </div>
-        </section>
 
-        <div class="project_buttons">
-          <a href="{git}">
-            <button class="code">Code</button>
-          </a>
-          <a href="{url}">
-            <button class="view">View</button>
-          </a>
+          <div class="like_section">
+            {#if like}
+            <p class="liked_title">Thanks for liking!</p>
+            {:else}
+            <p class="like_title">Like what you see? Give this page a like!</p>
+            <h5>{($getLikes.length)}</h5>
+
+            <img
+              class="heart"
+              src="{heart}"
+              alt="heart filled pink"
+              on:click|preventDefault="{handleClick}"
+            />
+            {/if}
+          </div>
+        </div>
+
+        <div class="text-wrapper">
+          <div class="text-section">
+            <section class="section">
+              <h5 class="section_title">Project Role</h5>
+              <p class="section_paragraph">{about}</p>
+            </section>
+
+            <section class="section">
+              <h5 class="tech_title">Tech Stack</h5>
+              <div class="stack_list_wrapper">
+                {#each tech_stack_list as tech }
+                <li>{tech}</li>
+                {/each}
+              </div>
+              <div class="project_buttons">
+                <a href="{git}">
+                  <button class="code">Code</button>
+                </a>
+                <a href="{url}">
+                  <button class="view">View</button>
+                </a>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="next_wrapper">
-      <img class="next" alt="next-arrow" src="{nextSlide}" on:click="{next}" />
+
+      <div class="next_wrapper">
+        <img
+          class="next"
+          alt="next-arrow"
+          src="{nextSlide}"
+          on:click="{next}"
+        />
+      </div>
     </div>
   </div>
+
+  <style>
+    .main_slide {
+      display: flex;
+      height: 100%;
+      width: 100%;
+    }
+    .heart {
+      width: 1.5rem;
+      padding: 1rem;
+    }
+    .like_title {
+      padding: 1rem;
+      width: 100%;
+      color: #d617bd;
+      text-align: center;
+    }
+    .like_section {
+      height: 90px;
+    }
+    .liked_title {
+      color: #d617bd;
+    }
+    .carousel_wrapper {
+      height: 100%;
+    }
+
+    .carousel {
+      display: flex;
+      height: 700px;
+      width: 100%;
+      background-color: #15202b;
+    }
+
+    .image_wrapper {
+      height: 100%;
+      width: 85%;
+    }
+
+    .slide {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      height: 100%;
+      padding: 1.5rem;
+    }
+    .slide_section {
+      width: 100%;
+      display: flex;
+    }
+    .like_section {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slide_title {
+      font-size: small;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 0.5rem;
+    }
+
+    .carousel-image {
+      width: 80%;
+      height: 80%;
+      padding: 1.5rem;
+    }
+    .previous_wrapper {
+      background-color: #21367f;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .previous {
+      width: 40px;
+      z-index: 1;
+      padding: 0.5rem;
+    }
+    .next_wrapper {
+      background-color: #21367f;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .next {
+      width: 40px;
+      z-index: 1;
+      padding: 0.5rem;
+    }
+    .project_buttons {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+    }
+    .code {
+      background-color: #21367f;
+      color: #fff;
+      border: 2px solid #2dfafc;
+      width: 130px;
+      height: 32.5px;
+      text-decoration: none;
+      border-radius: 35px;
+      font-size: small;
+    }
+    .view {
+      color: #fff;
+      border: 2px solid #2dfafc;
+      background-color: #21367f;
+      width: 130px;
+      height: 32.5px;
+      text-decoration: none;
+      border-radius: 35px;
+      font-size: small;
+    }
+    .text-wrapper {
+      display: flex;
+      width: 50%;
+      border-left: 2px solid #d617bd;
+      padding: 1.5rem;
+    }
+    .text-section {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
+    .section {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      font-size: small;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      text-align: center;
+    }
+    .section_paragraph {
+      width: 100%;
+      line-height: 1.5rem;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .section_title {
+      border-bottom: 2px solid #d617bd;
+      width: 50%;
+      padding: 0.5rem;
+    }
+    .tech_title {
+      border-bottom: 2px solid #d617bd;
+      width: 50%;
+      padding: 0.5rem;
+    }
+    .stack_list {
+      width: 100%;
+      height: 100%;
+    }
+    .stack_list_wrapper {
+      height: 100%;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      font-size: small;
+      justify-content: center;
+      line-height: 1.5rem;
+    }
+    @media screen and (max-width: 768px) {
+      .carousel-image {
+        height: 100%;
+      }
+      .main_slide {
+        display: flex;
+
+        flex-direction: column;
+        align-items: center;
+        height: 75%;
+      }
+      .text-wrapper {
+        width: 100%;
+        border-left: none;
+      }
+      .text-section {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: 315px;
+        flex-direction: row;
+      }
+      .section {
+        line-height: normal;
+      }
+      .like_section {
+        display: none;
+      }
+      .slide {
+        display: flex;
+        align-items: center;
+        height: 50%;
+        padding: 1.5rem;
+      }
+      .section_paragraph {
+        text-align: left;
+        height: 100%;
+        margin-left: 1rem;
+      }
+    }
+  </style>
 </div>
-
-<style>
-  .heart {
-    width: 1.5rem;
-    padding: 1rem;
-  }
-  .like_title {
-    padding: 1rem;
-    width: 100%;
-    color: #d617bd;
-  }
-  .like_section {
-    height: 90px;
-  }
-  .liked_title {
-    color: #d617bd;
-  }
-  .carousel_wrapper {
-    height: 100%;
-  }
-
-  .carousel {
-    display: flex;
-    height: 700px;
-    width: 100%;
-    background-color: #15202b;
-  }
-
-  .image_wrapper {
-    height: 100%;
-    width: 85%;
-  }
-
-  .slide {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 90%;
-    padding: 1.5rem;
-  }
-
-  .like_section {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .slide_title {
-    font-size: small;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 0.5rem;
-  }
-
-  .carousel-image {
-    width: 80%;
-    height: 80%;
-    padding: 1.5rem;
-  }
-  .previous_wrapper {
-    background-color: #21367f;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .previous {
-    width: 40px;
-    z-index: 1;
-    padding: 0.5rem;
-  }
-  .next_wrapper {
-    background-color: #21367f;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .next {
-    width: 40px;
-    z-index: 1;
-    padding: 0.5rem;
-  }
-  .project_buttons {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    margin-top: 2rem;
-  }
-  .code {
-    background-color: #21367f;
-    color: #fff;
-    border: 2px solid #2dfafc;
-    width: 130px;
-    height: 32.5px;
-    text-decoration: none;
-    border-radius: 35px;
-    font-size: small;
-  }
-  .view {
-    color: #fff;
-    border: 2px solid #2dfafc;
-    background-color: #21367f;
-    width: 130px;
-    height: 32.5px;
-    text-decoration: none;
-    border-radius: 35px;
-    font-size: small;
-  }
-  .text-wrapper {
-    display: flex;
-    justify-content: flex-end;
-    width: 50%;
-    border-left: 2px solid #d617bd;
-    padding: 1.5rem;
-  }
-  .text-section {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-  }
-  .section {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    font-size: small;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    text-align: center;
-  }
-  .section_paragraph {
-    width: 100%;
-    height: 100%;
-    line-height: 1.5rem;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .section_title {
-    border-bottom: 2px solid #d617bd;
-    width: 50%;
-    padding: 0.5rem;
-  }
-  .tech_title {
-    border-bottom: 2px solid #d617bd;
-    width: 50%;
-    padding: 0.5rem;
-  }
-  .stack_list {
-    width: 100%;
-    height: 100%;
-  }
-  .stack_list_wrapper {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    word-spacing: 30rem;
-    line-height: 2rem;
-    justify-content: center;
-  }
-</style>

@@ -19,10 +19,10 @@
   </section>
 
   <section class="section">
-    <p>
+    <h5>
       Welcome to my portfolio! My name is Luis. I am fullstack web developer
       from Pennsylvania.
-    </p>
+    </h5>
   </section>
 </div>
 
@@ -36,25 +36,27 @@
     /* border-bottom: 2px solid gray; */
     justify-content: space-between;
     font-size: small;
-    line-height: 5rem;
+    line-height: 2.5rem;
     justify-content: center;
   }
   .img1 {
-    width: 80%;
-    height: 80%;
+    padding: 1rem;
   }
   .section {
-    width: 45%;
-    text-align: center;
+    text-align: left;
     padding: 1rem;
     display: flex;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    justify-content: center;
+    width: 50%;
+    line-height: 5rem;
   }
   .about_header {
     position: relative;
     text-align: center;
     color: white;
     background-color: #15202b;
+    width: 100%;
   }
 
   .about_title {
@@ -78,5 +80,10 @@
     font-size: small;
     margin-right: 2.25rem;
     border: 2px solid #d617bd;
+  }
+  @media screen and (max-width: 768px) {
+    .img1 {
+      width: 80%;
+    }
   }
 </style>
