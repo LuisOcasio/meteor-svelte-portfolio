@@ -126,7 +126,7 @@
         width: 100%;
         justify-content: space-between;
         margin: 0;
-        padding: 0 40px;
+
     }
 
     .navbar-list.mobile {

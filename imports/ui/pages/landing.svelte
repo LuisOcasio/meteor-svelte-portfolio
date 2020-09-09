@@ -62,7 +62,8 @@
 
 <style>
     .wrapper {
-        overflow: hidden;
+    overflow: hidden;
+    width: 100%;
     }
 
     li {
@@ -97,5 +98,22 @@
         padding: 1.5rem;
         height: 100%;
         width: 100%;
+    }
+    @media screen and (max-width: 375px) {
+        li{
+        font-size: small;
+        }
+        .icon-container{
+            width: 10%;
+        }
+        .banner-section{
+            display: flex;
+            align-items: center;
+            height: 50%;
+        }
+        .banner{
+            height: 400px;
+        }
+        
     }
 </style>

@@ -37,7 +37,6 @@
     justify-content: space-between;
     font-size: small;
     line-height: 2.5rem;
-    justify-content: center;
   }
   .img1 {
     padding: 1rem;
@@ -84,6 +83,33 @@
   @media screen and (max-width: 768px) {
     .img1 {
       width: 80%;
+    }
+  }
+  @media screen and (max-width: 668px) {
+    .section {
+      display: flex;
+      flex-direction: column;
+      height: 50%;
+      width: 50%;
+      text-align: center;
+    }
+    .about_section {
+      display: flex;
+      flex-direction: column-reverse;
+      height: 100%;
+    }
+    @media screen and (max-width: 375px) {
+      .resume_button {
+        width: 20%;
+        margin-left: -2rem;
+      }
+
+      .slide_section {
+        height: 50%;
+      }
+      .section {
+        line-height: 2rem;
+      }
     }
   }
 </style>

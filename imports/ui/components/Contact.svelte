@@ -87,6 +87,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
   }
   .submit_btn_wrapper {
     padding: 1rem;
@@ -110,12 +111,23 @@
     width: 50%;
   }
   @media screen and (max-width: 768px) {
+    footer {
+      text-align: center;
+    }
     #contact_form {
       display: flex;
       flex-direction: column;
       align-items: center;
       height: 100%;
       width: 100%;
+    }
+  }
+  @media screen and (max-width: 375px) {
+    #contact_form {
+      padding: 1rem;
+    }
+    .banner {
+      height: 25%;
     }
   }
 </style>

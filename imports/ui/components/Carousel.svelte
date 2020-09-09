@@ -107,6 +107,12 @@
           <div class="like_section">
             {#if like}
             <p class="liked_title">Thanks for liking!</p>
+            <img
+              class="heart"
+              src="{heart_filled}"
+              alt="heart filled pink"
+              on:click|preventDefault="{handleClick}"
+            />
             {:else}
             <p class="like_title">Like what you see? Give this page a like!</p>
             <h5>{($getLikes.length)}</h5>
@@ -123,12 +129,12 @@
 
         <div class="text-wrapper">
           <div class="text-section">
-            <section class="section">
+            <section class="section1">
               <h5 class="section_title">Project Role</h5>
               <p class="section_paragraph">{about}</p>
             </section>
 
-            <section class="section">
+            <section class="section2">
               <h5 class="tech_title">Tech Stack</h5>
               <div class="stack_list_wrapper">
                 {#each tech_stack_list as tech }
@@ -176,7 +182,7 @@
       text-align: center;
     }
     .like_section {
-      height: 90px;
+      height: 25%;
     }
     .liked_title {
       color: #d617bd;
@@ -195,6 +201,8 @@
     .image_wrapper {
       height: 100%;
       width: 85%;
+      display: flex;
+      align-items: center;
     }
 
     .slide {
@@ -203,7 +211,7 @@
       flex-direction: column;
       justify-content: space-around;
       align-items: center;
-      height: 100%;
+
       padding: 1.5rem;
     }
     .slide_section {
@@ -214,7 +222,6 @@
       display: flex;
       align-items: center;
       flex-direction: column;
-      justify-content: center;
     }
 
     .slide_title {
@@ -226,9 +233,8 @@
     }
 
     .carousel-image {
-      width: 80%;
-      height: 80%;
-      padding: 1.5rem;
+      width: 100%;
+      height: 95%;
     }
     .previous_wrapper {
       background-color: #21367f;
@@ -292,7 +298,17 @@
       width: 100%;
       height: 100%;
     }
-    .section {
+    .section1 {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      font-size: small;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      text-align: center;
+    }
+    .section2 {
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -370,9 +386,33 @@
         padding: 1.5rem;
       }
       .section_paragraph {
-        text-align: left;
+        text-align: center;
         height: 100%;
         margin-left: 1rem;
+      }
+      .slide_title {
+        padding: 1rem;
+      }
+    }
+
+    @media screen and (max-width: 375px) {
+      .slide {
+        height: 100%;
+      }
+      .main_slide {
+        height: 100%;
+      }
+      .section1 {
+        display: none;
+      }
+      .text-wrapper {
+        height: 100%;
+      }
+      .next_wrapper {
+        width: 25px;
+      }
+      .previous_wrapper {
+        width: 25px;
       }
     }
   </style>
