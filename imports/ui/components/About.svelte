@@ -5,7 +5,7 @@
 </script>
 
 <div class="about_header">
-  <img class="header" src="{src}" alt="blue-header" id="about_me" />
+  <img class="header" src="{src}" alt="blue-header" id="about" />
   <h1 class="about_title">About Me</h1>
   <button class="resume_button">
     <a href="https://resume.creddle.io/resume/63v349pbnj3">Resume</a>
@@ -109,6 +109,22 @@
       }
       .section {
         line-height: 2rem;
+      }
+    }
+    @media screen and (max-width: 668px) {
+      .resume_button {
+        top: 50%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+        background-color: #21367f;
+        color: #fff;
+        width: 15%;
+        height: 32.5px;
+        text-decoration: none;
+        border-radius: 35px;
+        font-size: small;
+        margin-right: 2.25rem;
+        border: 2px solid #d617bd;
       }
     }
   }

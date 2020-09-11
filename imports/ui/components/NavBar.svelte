@@ -32,9 +32,9 @@
             <div class="middle-line" />
             <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
                 <a href="#home">Top of Page</a>
-                <a href="#skills">Projects</a>
-                <a href="#about_me">About</a>
-                <a href="#hello">Contact</a>
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
             </ul>    
         </div>
     </div>
@@ -42,12 +42,13 @@
 
 <style>
     nav {
-        width: 100%;
         background-color: #15202b;
         height: 85px;
         position: fixed;
         top: 0;
         z-index: 2;
+        width: 100%;
+        max-width: inherit;
     }
 
     .inner {

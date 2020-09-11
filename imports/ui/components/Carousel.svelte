@@ -42,7 +42,7 @@
 
   const projects_about = [
     {
-      0: "A Headless WordPress site created for a client in the music industry. This website allows users to stream and downloaded music across various devices thanks to its custom media player. Users can also purchase instrumentals through checkout service. The benefits of a headless cms is that my client has full control of the content on the site through a user friendly ui thanks to wordpress.",
+      0: "A Headless WordPress site created for a client in the music industry. This website allows users to stream and downloaded music across various devices thanks to its custom media player. Users can also purchase instrumentals through checkout service. ",
     },
     {
       1: "Single page application created for a local coffee shop business. This applicaton takes full advantage of react and the react-router library to render components and routes on the client rather than fetching data from a server.",
@@ -81,7 +81,7 @@
 </script>
 
 <div class="carousel_wrapper">
-  <div class="carousel">
+  <div class="carousel" id="projects">
     <div class="previous_wrapper">
       <img
         class="previous"
@@ -187,10 +187,6 @@
     .liked_title {
       color: #d617bd;
     }
-    .carousel_wrapper {
-      height: 100%;
-    }
-
     .carousel {
       display: flex;
       height: 700px;
@@ -206,7 +202,7 @@
     }
 
     .slide {
-      width: 60%;
+      width: 50%;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
@@ -242,11 +238,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 4.5%;
     }
     .previous {
-      width: 40px;
       z-index: 1;
       padding: 0.5rem;
+      width: 100%;
     }
     .next_wrapper {
       background-color: #21367f;
@@ -254,11 +251,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 4.5%;
     }
     .next {
       width: 40px;
       z-index: 1;
       padding: 0.5rem;
+      width: 100%;
     }
     .project_buttons {
       display: flex;
@@ -413,6 +412,20 @@
       }
       .previous_wrapper {
         width: 25px;
+      }
+    }
+
+    @media screen and (max-width: 668px) {
+      .project_buttons {
+        display: flex;
+        flex-direction: column;
+        height: 50%;
+      }
+    }
+    @media screen and (max-width: 445px) {
+      .text-section {
+        display: flex;
+        flex-direction: column;
       }
     }
   </style>

@@ -13,9 +13,9 @@
     <div class="banner-section" id='home'>
         <img class="banner" alt={desc} src={src} />
     </div>
-<div class='photo_desc' >
-    <p>photo by: Luis Ocasio - Denver, CO 'RINO ART DISTRICT'</p>
-</div>
+        <div class='photo_desc' >
+            <p>photo by: Luis Ocasio - Denver, CO 'RINO ART DISTRICT'</p>
+        </div>
     <div class="tech-icons" >
         <div class="icon-container" id="skills">
             <img
@@ -62,19 +62,16 @@
 
 <style>
     .wrapper {
-    overflow: hidden;
-    width: 100%;
+    max-width: 1100px;
+    margin:auto;
     }
 
     li {
         list-style-type: none;
     }
-    .banner-section {
-        height: 700px;
-    }
-    .banner {
-        width: 100%;
-        height: 100%;
+      .banner {
+     height: 100%;
+     width: 100%;
     }
     .photo_desc{
         font-size: xx-small;
@@ -82,38 +79,37 @@
     .tech-icons {
         background-color: #15202b;
         border-bottom: 2px solid gray;
-        height: 100px;
+        height: 150px;
         display: flex;
         align-items: center;
         justify-content: space-around;
         font-size: large;
-        padding: 3rem;
+        width: 100%;
+
     }
     .icon-container {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        height: 100%;
         align-items: center;
         padding: 1.5rem;
         height: 100%;
         width: 100%;
     }
     @media screen and (max-width: 375px) {
+        .tech-icons{
+            width: 100%;
+        }
         li{
         font-size: small;
         }
         .icon-container{
-            width: 10%;
+            width: 100%;
         }
         .banner-section{
             display: flex;
             align-items: center;
             height: 50%;
-        }
-        .banner{
-            height: 400px;
-        }
-        
+        }   
     }
 </style>
