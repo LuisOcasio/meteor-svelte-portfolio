@@ -43,24 +43,22 @@
 <style>
     nav {
         background-color: #15202b;
-        height: 5%;
         position: fixed;
         top: 0;
         z-index: 2;
+        display: flex;
+        justify-content: space-between;
         width: 100%;
-        max-width: inherit;
+        height: 50px;
     }
 
-    .inner {
-        max-width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
+    .inner {     
         box-sizing: border-box;
         display: flex;
         align-items: center;
         height: 100%;
-        justify-content: flex-end;
         justify-content: space-between;
+        width: 100%;
     }
 
     .mobile-icon {
@@ -134,7 +132,7 @@
         background-color: rgba(0, 0, 0, 0.8);
         position: fixed;
         display: block;
-        height: calc(100% - 75px);
+        height: calc(100% - 50px);
         bottom: 0;
         left: 0;
     }

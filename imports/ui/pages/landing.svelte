@@ -14,7 +14,7 @@
         <img class="banner" alt={desc} src={src} />
     </div>
         <div class='photo_desc' >
-            <p>photo by: Luis Ocasio - Denver, CO 'RINO ART DISTRICT'</p>
+            <span>photo by: Luis Ocasio - Denver, CO 'RINO ART DISTRICT'</span>
         </div>
     <div class="tech-icons" >
         <div class="icon-container" id="skills">
@@ -64,6 +64,7 @@
     .wrapper {
     max-width: 1100px;
     margin:auto;
+    overflow-x: hidden;
     }
 
     li {
@@ -75,6 +76,8 @@
     }
     .photo_desc{
         font-size: xx-small;
+        padding: 0.5rem;
+
     }
     .tech-icons {
         background-color: #15202b;
