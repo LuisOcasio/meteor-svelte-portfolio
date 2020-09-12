@@ -79,7 +79,7 @@
     .tech-icons {
         background-color: #15202b;
         border-bottom: 2px solid gray;
-        height: 150px;
+        height: 5%;
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -96,7 +96,17 @@
         height: 100%;
         width: 100%;
     }
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 550px) {
+        .tech-icons{
+        display: flex;
+
+        flex-wrap: wrap;
+        }
+        .icon-container{
+            width: 25%;
+        }
+    }
+    @media screen and (min-width: 375px) {
         .tech-icons{
             width: 100%;
         }
@@ -104,7 +114,7 @@
         font-size: small;
         }
         .icon-container{
-            width: 100%;
+            width: 25%;
         }
         .banner-section{
             display: flex;

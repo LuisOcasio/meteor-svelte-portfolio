@@ -6,7 +6,7 @@
 
 <div class="about_header">
   <img class="header" src="{src}" alt="blue-header" id="about" />
-  <h1 class="about_title">About Me</h1>
+  <h4 class="about_title">About Me</h4>
   <button class="resume_button">
     <a href="https://resume.creddle.io/resume/63v349pbnj3">Resume</a>
   </button>
@@ -19,10 +19,10 @@
   </section>
 
   <section class="section">
-    <h5>
+    <p>
       Welcome to my portfolio! My name is Luis. I am fullstack web developer
       from Pennsylvania.
-    </h5>
+    </p>
   </section>
 </div>
 
@@ -39,16 +39,16 @@
     line-height: 2.5rem;
   }
   .img1 {
-    padding: 1rem;
+    padding: 2rem;
   }
   .section {
     text-align: left;
-    padding: 1rem;
     display: flex;
     font-size: 1rem;
-    justify-content: center;
+    flex-direction: column;
     width: 50%;
-    line-height: 5rem;
+    height: 100%;
+    justify-content: center;
   }
   .about_header {
     position: relative;
@@ -63,6 +63,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
   }
 
   .resume_button {

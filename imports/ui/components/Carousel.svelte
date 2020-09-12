@@ -134,9 +134,9 @@
               <p class="section_paragraph">{about}</p>
             </section>
 
-            <section class="section2">
-              <h5 class="tech_title">Tech Stack</h5>
+            <span class="section2">
               <div class="stack_list_wrapper">
+                <h5 class="tech_title">Tech Stack</h5>
                 {#each tech_stack_list as tech }
                 <li>{tech}</li>
                 {/each}
@@ -149,11 +149,10 @@
                   <button class="view">View</button>
                 </a>
               </div>
-            </section>
+            </span>
           </div>
         </div>
       </div>
-
       <div class="next_wrapper">
         <img
           class="next"
@@ -166,9 +165,12 @@
   </div>
 
   <style>
+    li {
+      padding: 0.25rem;
+    }
     .main_slide {
       display: flex;
-      height: 100%;
+
       width: 100%;
     }
     .heart {
@@ -189,30 +191,29 @@
     }
     .carousel {
       display: flex;
-      height: 700px;
       width: 100%;
+      height: 100%;
       background-color: #15202b;
     }
 
     .image_wrapper {
-      height: 100%;
       width: 85%;
+      height: 100%;
       display: flex;
       align-items: center;
     }
 
     .slide {
       width: 50%;
+      height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
       align-items: center;
-
-      padding: 1.5rem;
     }
     .slide_section {
       width: 100%;
       display: flex;
+      height: 100%;
     }
     .like_section {
       display: flex;
@@ -230,11 +231,9 @@
 
     .carousel-image {
       width: 100%;
-      height: 95%;
     }
     .previous_wrapper {
       background-color: #21367f;
-      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -247,7 +246,6 @@
     }
     .next_wrapper {
       background-color: #21367f;
-      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -261,16 +259,17 @@
     }
     .project_buttons {
       display: flex;
-      justify-content: space-around;
-      align-items: center;
+      justify-content: space-between;
+      align-items: flex-end;
       width: 100%;
+      padding: 1rem;
     }
     .code {
       background-color: #21367f;
       color: #fff;
       border: 2px solid #2dfafc;
-      width: 130px;
-      height: 32.5px;
+      width: 5rem;
+      height: 2rem;
       text-decoration: none;
       border-radius: 35px;
       font-size: small;
@@ -279,8 +278,8 @@
       color: #fff;
       border: 2px solid #2dfafc;
       background-color: #21367f;
-      width: 130px;
-      height: 32.5px;
+      width: 5rem;
+      height: 2rem;
       text-decoration: none;
       border-radius: 35px;
       font-size: small;
@@ -289,33 +288,33 @@
       display: flex;
       width: 50%;
       border-left: 2px solid #d617bd;
-      padding: 1.5rem;
     }
     .text-section {
       display: flex;
       flex-direction: column;
       width: 100%;
-      height: 100%;
+      max-height: 100%;
+      justify-content: space-between;
+      padding: 1rem;
+      align-items: center;
     }
     .section1 {
-      height: 100%;
       display: flex;
       flex-direction: column;
       font-size: small;
       align-items: center;
-      justify-content: space-between;
-      width: 100%;
       text-align: center;
+      height: 50%;
+      width: 75%;
     }
     .section2 {
-      height: 100%;
       display: flex;
       flex-direction: column;
       font-size: small;
       align-items: center;
       justify-content: space-between;
-      width: 100%;
-      text-align: center;
+      height: 50%;
+      width: 75%;
     }
     .section_paragraph {
       width: 100%;
@@ -323,32 +322,39 @@
       text-align: left;
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 1rem;
+      height: 100%;
     }
     .section_title {
       border-bottom: 2px solid #d617bd;
-      width: 50%;
+      width: 100%;
       padding: 0.5rem;
+      text-align: center;
     }
     .tech_title {
       border-bottom: 2px solid #d617bd;
-      width: 50%;
+      width: 100%;
       padding: 0.5rem;
+      text-align: center;
+      height: 100%;
     }
     .stack_list {
       width: 100%;
       height: 100%;
     }
     .stack_list_wrapper {
-      height: 100%;
-      width: 50%;
+      width: 100%;
       display: flex;
       flex-direction: column;
       text-align: left;
       font-size: small;
       justify-content: center;
       line-height: 1.5rem;
+      height: 100%;
+    }
+    @media screen and (max-width: 865px) {
+      .project_buttons {
+        max-width: 100%;
+      }
     }
     @media screen and (max-width: 768px) {
       .carousel-image {
@@ -361,19 +367,15 @@
         align-items: center;
         height: 75%;
       }
-      .text-wrapper {
-        width: 100%;
-        border-left: none;
-      }
       .text-section {
         display: flex;
         justify-content: space-around;
         width: 100%;
-        height: 315px;
-        flex-direction: row;
+        height: 100%;
+        flex-direction: column;
       }
-      .section {
-        line-height: normal;
+      .section1 {
+        padding: 1rem;
       }
       .like_section {
         display: none;
@@ -382,50 +384,71 @@
         display: flex;
         align-items: center;
         height: 50%;
-        padding: 1.5rem;
+        width: 60%;
       }
       .section_paragraph {
         text-align: center;
         height: 100%;
-        margin-left: 1rem;
+        padding: 1rem;
       }
       .slide_title {
         padding: 1rem;
       }
+      .project_buttons {
+        padding: 1rem;
+      }
+      .stack_list_wrapper {
+        padding: 1rem;
+      }
+      .text-wrapper {
+        border-left: none;
+      }
     }
 
     @media screen and (max-width: 375px) {
-      .slide {
-        height: 100%;
-      }
       .main_slide {
         height: 100%;
       }
-      .section1 {
-        display: none;
-      }
+
       .text-wrapper {
         height: 100%;
+        width: 100%;
+        border: none;
       }
-      .next_wrapper {
-        width: 25px;
-      }
-      .previous_wrapper {
-        width: 25px;
+      .project_buttons {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
       }
     }
 
     @media screen and (max-width: 668px) {
       .project_buttons {
         display: flex;
-        flex-direction: column;
+
         height: 50%;
+      }
+      .slide {
+        width: 80%;
       }
     }
     @media screen and (max-width: 445px) {
       .text-section {
         display: flex;
         flex-direction: column;
+      }
+      .section1 {
+        height: 100%;
+        width: 100%;
+      }
+      .stack_list_wrapper {
+        height: 100%;
+      }
+      .section2 {
+        height: 100%;
+        width: 100%;
+        display: flex;
       }
     }
   </style>

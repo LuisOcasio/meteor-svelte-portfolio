@@ -43,7 +43,7 @@
 <style>
     nav {
         background-color: #15202b;
-        height: 85px;
+        height: 5%;
         position: fixed;
         top: 0;
         z-index: 2;

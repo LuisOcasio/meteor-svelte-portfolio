@@ -55,7 +55,7 @@
   footer {
     bottom: 0;
     width: 100%;
-    height: 700px;
+    height: 100%;
     background-color: #15202b;
     display: flex;
     flex-direction: column;
@@ -115,6 +115,7 @@
     footer {
       text-align: center;
     }
+
     #contact_form {
       display: flex;
       flex-direction: column;
@@ -122,11 +123,11 @@
       height: 100%;
       width: 100%;
     }
-  }
-  @media screen and (max-width: 375px) {
-    #contact_form {
-      padding: 1rem;
+    input {
+      margin: 0.5rem;
     }
+  }
+  @media screen and (min-width: 375px) {
     .banner {
       height: 25%;
     }
