@@ -7,7 +7,7 @@
   <h1 class="header_title">Lets Keep In Touch</h1>
 </div>
 
-<footer id="home">
+<footer id="contact">
   <form id="contact_form">
     <input type="name" placeholder="name" />
     <input type="email" placeholder="email" />
