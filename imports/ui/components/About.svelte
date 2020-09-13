@@ -17,8 +17,9 @@
 
   <section class="section-text">
     <p>
-      Welcome to my portfolio! My name is Luis. I am fullstack web developer
-      from Pennsylvania.
+      Welcome to my portfolio!<br />
+      My name is Luis.<br />
+      I am fullstack web developer from Pennsylvania.
     </p>
 
     <button class="resume_button">
@@ -42,26 +43,29 @@
     justify-content: space-between;
     font-size: small;
     line-height: 2.5rem;
+    flex-direction: column;
   }
   .img1 {
     padding: 2rem;
+    width: 25%;
   }
   .section-text {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 50%;
-    width: 50%;
-    font-size: large;
+    height: 100%;
+    width: 100%;
+    font-size: x-large;
+    line-height: 3rem;
+    align-items: center;
   }
   .section {
     text-align: left;
     display: flex;
     font-size: 1.25rem;
-    flex-direction: column;
-    width: 50%;
+    width: 100%;
     height: 100%;
-    justify-content: center;
+    justify-content: space-around;
     line-height: 3rem;
   }
   .about_header {
@@ -83,11 +87,11 @@
   .resume_button {
     background-color: #21367f;
     color: #fff;
-    width: 25%;
+    width: 10%;
     height: 32px;
     text-decoration: none;
     border-radius: 35px;
-    font-size: small;
+    font-size: medium;
     align-self: flex-end;
     border: 2px solid #d617bd;
     margin-right: 2rem;

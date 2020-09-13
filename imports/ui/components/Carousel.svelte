@@ -343,15 +343,14 @@
     }
     @media screen and (max-width: 768px) {
       .carousel-image {
-        height: 95%;
-        width: 75%;
+        width: 60%;
       }
       .text-section {
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-around;
         width: 100%;
-        height: 50%;
+        height: 40%;
         border-left: none;
       }
       .section1,
@@ -361,15 +360,15 @@
       }
 
       .slide {
-        height: 40%;
-        width: 80%;
+        height: 50%;
+        width: 100%;
         display: flex;
+        padding: inherit;
       }
       .slide_section {
         display: flex;
         width: 100%;
         height: 100%;
-
         align-items: center;
       }
       .section_paragraph {
@@ -378,21 +377,12 @@
         padding: 1rem;
         align-items: flex-start;
       }
-      .slide_title {
-        padding: 1rem;
-      }
-
-      .stack_list_wrapper {
-        padding: 1rem;
-      }
       .project_buttons {
         display: flex;
         justify-content: space-around;
         width: 100%;
       }
       .slide-wrapper {
-        width: 100%;
-        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -407,31 +397,54 @@
         width: 100%;
       }
     }
-
-    @media screen and (max-width: 668px) {
-      .project_buttons {
-        height: 100%;
-      }
-      .slide {
-        width: 90%;
-        height: 40%;
+    @media screen and (max-width: 489px) {
+      .section_paragraph {
+        line-height: normal;
       }
       .text-section {
+        display: flex;
+        height: 100%;
+        width: 100%;
+      }
+      .section_title {
+        width: 70%;
+      }
+      .tech_title {
+        width: 70%;
+      }
+    }
+
+    @media screen and (max-width: 668px) {
+      .slide {
+        width: 90%;
         height: 50%;
       }
+      .text-section {
+        height: 40%;
+        display: flex;
+        flex-direction: row;
+      }
       .section1 {
-        width: 100%;
+        width: 50%;
         height: 100%;
       }
 
       .section2 {
         height: 100%;
-        width: 100%;
+        width: 50%;
       }
       .stack_list_wrapper {
-        height: 100%;
-        width: 100%;
+        width: 80%;
         line-height: normal;
+        display: flex;
+        align-items: flex-start;
+        height: 100%;
+      }
+      li {
+        width: 100%;
+      }
+      .section_paragraph {
+        padding: 1.5rem;
       }
     }
     @media screen and (max-width: 445px) {
