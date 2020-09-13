@@ -7,9 +7,6 @@
 <div class="about_header">
   <img class="header" src="{src}" alt="blue-header" id="about" />
   <h4 class="about_title">About Me</h4>
-  <button class="resume_button">
-    <a href="https://resume.creddle.io/resume/63v349pbnj3">Resume</a>
-  </button>
 </div>
 
 <div class="about_section">
@@ -18,15 +15,23 @@
     <img class="img1" src="{img2}" alt="pic of me" />
   </section>
 
-  <section class="section">
+  <section class="section-text">
     <p>
       Welcome to my portfolio! My name is Luis. I am fullstack web developer
       from Pennsylvania.
     </p>
+
+    <button class="resume_button">
+      <a href="https://resume.creddle.io/resume/63v349pbnj3">Resume</a>
+    </button>
   </section>
 </div>
 
 <style>
+  .header {
+    height: 100%;
+    width: 100%;
+  }
   .about_section {
     height: 700px;
     width: 100%;
@@ -41,14 +46,23 @@
   .img1 {
     padding: 2rem;
   }
+  .section-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 50%;
+    width: 50%;
+    font-size: large;
+  }
   .section {
     text-align: left;
     display: flex;
-    font-size: 1rem;
+    font-size: 1.25rem;
     flex-direction: column;
     width: 50%;
     height: 100%;
     justify-content: center;
+    line-height: 3rem;
   }
   .about_header {
     position: relative;
@@ -67,19 +81,17 @@
   }
 
   .resume_button {
-    position: absolute;
-    top: 50%;
-    left: 20%;
-    transform: translate(-50%, -50%);
     background-color: #21367f;
     color: #fff;
-    width: 130px;
-    height: 32.5px;
+    width: 25%;
+    height: 32px;
     text-decoration: none;
     border-radius: 35px;
     font-size: small;
-    margin-right: 2.25rem;
+    align-self: flex-end;
     border: 2px solid #d617bd;
+    margin-right: 2rem;
+    margin-bottom: 3rem;
   }
   @media screen and (max-width: 768px) {
     .img1 {
@@ -87,6 +99,10 @@
     }
   }
   @media screen and (max-width: 668px) {
+    .section-text {
+      width: 100%;
+      padding: 1rem;
+    }
     .section {
       display: flex;
       flex-direction: column;
@@ -100,32 +116,11 @@
       height: 100%;
     }
     @media screen and (max-width: 375px) {
-      .resume_button {
-        width: 20%;
-        margin-left: -2rem;
-      }
-
       .slide_section {
         height: 50%;
       }
       .section {
         line-height: 2rem;
-      }
-    }
-    @media screen and (max-width: 668px) {
-      .resume_button {
-        top: 50%;
-        left: 20%;
-        transform: translate(-50%, -50%);
-        background-color: #21367f;
-        color: #fff;
-        width: 15%;
-        height: 32.5px;
-        text-decoration: none;
-        border-radius: 35px;
-        font-size: small;
-        margin-right: 2.25rem;
-        border: 2px solid #d617bd;
       }
     }
   }

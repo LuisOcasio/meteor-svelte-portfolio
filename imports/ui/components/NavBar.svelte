@@ -43,20 +43,17 @@
 <style>
     nav {
         background-color: #15202b;
-        position: fixed;
-        top: 0;
         z-index: 2;
         display: flex;
         justify-content: space-between;
-        width: 100%;
         height: 50px;
+        width: 100%;
+        position: sticky;
     }
 
     .inner {     
-        box-sizing: border-box;
         display: flex;
-        align-items: center;
-        height: 100%;
+        align-items: center;     
         justify-content: space-between;
         width: 100%;
     }

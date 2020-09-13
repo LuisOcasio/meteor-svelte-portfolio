@@ -42,7 +42,7 @@
 
   const projects_about = [
     {
-      0: "A Headless WordPress site created for a client in the music industry. This website allows users to stream and downloaded music across various devices thanks to its custom media player. Users can also purchase instrumentals through checkout service. ",
+      0: "A Headless WordPress site created for a client in the music industry. This website allows users to stream and downloaded music across various devices thanks to its custom media player.  ",
     },
     {
       1: "Single page application created for a local coffee shop business. This applicaton takes full advantage of react and the react-router library to render components and routes on the client rather than fetching data from a server.",
@@ -80,88 +80,77 @@
   }
 </script>
 
-<div class="carousel_wrapper">
-  <div class="carousel" id="projects">
-    <div class="previous_wrapper">
-      <img
-        class="previous"
-        alt="go-back-arrow"
-        src="{previousSlide}"
-        on:click="{previous}"
-      />
-    </div>
-    <!-- slide section -->
-    <div class="slide_section">
-      <div class="main_slide">
-        <div class="slide">
-          <section class="slide_title">
-            <h5>{project}</h5>
-          </section>
+<div class="carousel" id="projects">
+  <div class="previous_wrapper">
+    <img
+      class="previous"
+      alt="go-back-arrow"
+      src="{previousSlide}"
+      on:click="{previous}"
+    />
+  </div>
 
-          <div class="image_wrapper">
-            {#each [Projects[index]] as src (index)} <img class="carousel-image"
-            alt="landing page of project" src={src} in:fly={{ x: -50, duration: 2000 }}
-            /> {/each}
-          </div>
+  <!-- slide section -->
+  <div class="slide-wrapper">
+    <div class="slide">
+      <h5>{project}</h5>
 
-          <div class="like_section">
-            {#if like}
-            <p class="liked_title">Thanks for liking!</p>
-            <img
-              class="heart"
-              src="{heart_filled}"
-              alt="heart filled pink"
-              on:click|preventDefault="{handleClick}"
-            />
-            {:else}
-            <p class="like_title">Like what you see? Give this page a like!</p>
-            <h5>{($getLikes.length)}</h5>
-
-            <img
-              class="heart"
-              src="{heart}"
-              alt="heart filled pink"
-              on:click|preventDefault="{handleClick}"
-            />
-            {/if}
-          </div>
-        </div>
-
-        <div class="text-wrapper">
-          <div class="text-section">
-            <section class="section1">
-              <h5 class="section_title">Project Role</h5>
-              <p class="section_paragraph">{about}</p>
-            </section>
-
-            <span class="section2">
-              <div class="stack_list_wrapper">
-                <h5 class="tech_title">Tech Stack</h5>
-                {#each tech_stack_list as tech }
-                <li>{tech}</li>
-                {/each}
-              </div>
-              <div class="project_buttons">
-                <a href="{git}">
-                  <button class="code">Code</button>
-                </a>
-                <a href="{url}">
-                  <button class="view">View</button>
-                </a>
-              </div>
-            </span>
-          </div>
-        </div>
+      {#each [Projects[index]] as src (index)}
+      <div class="image_wrapper">
+        <img class="carousel-image" alt="landing page of project" src={src}
+        in:fly={{ x: -50, duration: 2000 }} />
       </div>
-      <div class="next_wrapper">
+      {/each}
+
+      <div class="like_section">
+        {#if like}
+        <p class="liked_title">Thanks for liking!</p>
         <img
-          class="next"
-          alt="next-arrow"
-          src="{nextSlide}"
-          on:click="{next}"
+          class="heart"
+          src="{heart_filled}"
+          alt="heart filled pink"
+          on:click|preventDefault="{handleClick}"
         />
+        {:else}
+        <p class="like_title">Like what you see? Give this page a like!</p>
+        <h5>{($getLikes.length)}</h5>
+        <img
+          class="heart"
+          src="{heart}"
+          alt="heart filled pink"
+          on:click|preventDefault="{handleClick}"
+        />
+        {/if}
       </div>
     </div>
+
+    <div class="text-section">
+      <div class="section1">
+        <h5 class="section_title">Project Role</h5>
+        <p class="section_paragraph">{about}</p>
+      </div>
+
+      <div class="section2">
+        <h5 class="tech_title">Tech Stack</h5>
+        <div class="stack_list_wrapper">
+          {#each tech_stack_list as tech }
+          <li>{tech}</li>
+          {/each}
+        </div>
+
+        <div class="project_buttons">
+          <a href="{git}">
+            <button class="code">Code</button>
+          </a>
+          <a href="{url}">
+            <button class="view">View</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="next_wrapper">
+    <img class="next" alt="next-arrow" src="{nextSlide}" on:click="{next}" />
   </div>
 
   <style>
@@ -170,8 +159,8 @@
     }
     .main_slide {
       display: flex;
-      height: 100%;
       width: 100%;
+      height: 100%;
     }
     .heart {
       width: 1.5rem;
@@ -183,42 +172,46 @@
       color: #d617bd;
       text-align: center;
     }
-    .like_section {
-      height: 25%;
-    }
     .liked_title {
       color: #d617bd;
     }
     .carousel {
       display: flex;
-      width: 100%;
-      height: 100%;
       background-color: #15202b;
+      height: 800px;
+      width: 100%;
     }
 
     .image_wrapper {
-      width: 80%;
-      height: 100%;
       display: flex;
       align-items: center;
+      justify-content: center;
+      height: 100%;
     }
-
+    .slide-wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+    }
     .slide {
-      width: 50%;
+      width: 60%;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      padding: 1rem;
     }
     .slide_section {
       width: 100%;
-      display: flex;
       height: 100%;
+      display: flex;
     }
     .like_section {
       display: flex;
       align-items: center;
       flex-direction: column;
-      height: 100%;
+      margin-bottom: 1rem;
     }
 
     .slide_title {
@@ -230,40 +223,38 @@
     }
 
     .carousel-image {
-      width: 100%;
-      height: 100%;
+      width: 90%;
+      height: 80%;
     }
     .previous_wrapper {
       background-color: #21367f;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 4.5%;
+      width: 10%;
     }
     .previous {
+      width: 60%;
       z-index: 1;
-      padding: 0.5rem;
-      width: 100%;
     }
     .next_wrapper {
       background-color: #21367f;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 4.5%;
+      width: 10%;
     }
     .next {
-      width: 40px;
+      width: 60%;
       z-index: 1;
-      padding: 0.5rem;
-      width: 100%;
     }
     .project_buttons {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: flex-end;
       width: 100%;
       padding: 1rem;
+      height: 50%;
     }
     .code {
       background-color: #21367f;
@@ -285,28 +276,22 @@
       border-radius: 35px;
       font-size: small;
     }
-    .text-wrapper {
-      display: flex;
-      width: 50%;
-      border-left: 2px solid #d617bd;
-    }
     .text-section {
       display: flex;
       flex-direction: column;
-      width: 100%;
-      max-height: 100%;
+      width: 50%;
       justify-content: space-between;
-      padding: 1rem;
       align-items: center;
+      border-left: 2px solid #d617bd;
     }
     .section1 {
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       font-size: small;
+      height: 50%;
+      width: 100%;
       align-items: center;
-      text-align: center;
-      height: 100%;
-      width: 75%;
     }
     .section2 {
       display: flex;
@@ -314,42 +299,42 @@
       font-size: small;
       align-items: center;
       justify-content: space-between;
-      height: 100%;
-      width: 75%;
+      height: 50%;
+      width: 100%;
     }
     .section_paragraph {
-      width: 100%;
+      width: 90%;
       line-height: 1.5rem;
       text-align: left;
       display: flex;
-      align-items: center;
       height: 100%;
+      align-items: center;
     }
     .section_title {
       border-bottom: 2px solid #d617bd;
-      width: 100%;
+      width: 60%;
       padding: 0.5rem;
       text-align: center;
     }
     .tech_title {
       border-bottom: 2px solid #d617bd;
-      width: 100%;
+      width: 60%;
       padding: 0.5rem;
       text-align: center;
     }
     .stack_list {
       width: 100%;
-      height: 100%;
     }
     .stack_list_wrapper {
-      width: 100%;
+      width: 90%;
+      height: 100%;
       display: flex;
       flex-direction: column;
       text-align: left;
       font-size: small;
       justify-content: center;
       line-height: 1.5rem;
-      height: 100%;
+      margin-top: 1rem;
     }
     @media screen and (max-width: 865px) {
       .project_buttons {
@@ -358,103 +343,121 @@
     }
     @media screen and (max-width: 768px) {
       .carousel-image {
-        height: 100%;
-      }
-      .main_slide {
-        display: flex;
-
-        flex-direction: column;
-        align-items: center;
-        height: 75%;
+        height: 95%;
+        width: 75%;
       }
       .text-section {
         display: flex;
+        flex-direction: row-reverse;
         justify-content: space-around;
         width: 100%;
-        height: 100%;
-        flex-direction: column;
-      }
-      .section1 {
-        padding: 1rem;
-      }
-      .like_section {
-        display: none;
-      }
-      .slide {
-        display: flex;
-        align-items: center;
         height: 50%;
-        width: 60%;
+        border-left: none;
+      }
+      .section1,
+      .section2 {
+        width: 50%;
+        height: 100%;
+      }
+
+      .slide {
+        height: 40%;
+        width: 80%;
+        display: flex;
+      }
+      .slide_section {
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        align-items: center;
       }
       .section_paragraph {
         text-align: center;
         height: 100%;
         padding: 1rem;
+        align-items: flex-start;
       }
       .slide_title {
         padding: 1rem;
       }
-      .project_buttons {
-        padding: 1rem;
-      }
+
       .stack_list_wrapper {
         padding: 1rem;
-      }
-      .text-wrapper {
-        border-left: none;
-        width: 100%;
       }
       .project_buttons {
         display: flex;
         justify-content: space-around;
         width: 100%;
       }
+      .slide-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
     }
 
     @media screen and (max-width: 375px) {
-      .main_slide {
-        height: 100%;
-      }
-
-      .text-wrapper {
-        height: 100%;
-        width: 100%;
-        border: none;
-      }
       .project_buttons {
         display: flex;
         flex-direction: row;
         width: 100%;
-        height: 100%;
       }
     }
 
     @media screen and (max-width: 668px) {
       .project_buttons {
-        display: flex;
-
-        height: 50%;
+        height: 100%;
       }
       .slide {
-        width: 80%;
+        width: 90%;
+        height: 40%;
       }
-    }
-    @media screen and (max-width: 445px) {
       .text-section {
-        display: flex;
-        flex-direction: column;
+        height: 50%;
       }
       .section1 {
+        width: 100%;
+        height: 100%;
+      }
+
+      .section2 {
         height: 100%;
         width: 100%;
       }
       .stack_list_wrapper {
         height: 100%;
+        width: 100%;
+        line-height: normal;
       }
+    }
+    @media screen and (max-width: 445px) {
+      .project_buttons {
+        height: 100%;
+      }
+      .slide {
+        width: 90%;
+        height: 40%;
+      }
+      .text-section {
+        height: 100%;
+      }
+      .section1 {
+        width: 50%;
+        height: 100%;
+      }
+
       .section2 {
         height: 100%;
+        width: 50%;
+      }
+      .stack_list_wrapper {
+        height: 100%;
         width: 100%;
-        display: flex;
+        line-height: normal;
       }
     }
   </style>

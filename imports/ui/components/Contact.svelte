@@ -44,14 +44,17 @@
     </a>
   </div>
 
-  <div>
+  <div class="bottom">
     <a href="https://fullstackog.com/" alt="blog-site">
-      <p>🚧Checkout My Blog Site🚧</p>
+      <p>🚧 Checkout My Blog Site 🚧</p>
     </a>
   </div>
 </footer>
 
 <style>
+  #social-media-icons {
+    padding: 1rem;
+  }
   footer {
     bottom: 0;
     width: 100%;
@@ -61,6 +64,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    background-color: rgb(54, 116, 248);
   }
   input {
     height: 48px;
@@ -110,6 +114,9 @@
   #message_input {
     height: 250px;
     width: 50%;
+  }
+  .bottom {
+    padding: 1rem;
   }
   @media screen and (max-width: 768px) {
     footer {
