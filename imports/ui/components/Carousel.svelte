@@ -93,7 +93,7 @@
   <!-- slide section -->
   <div class="slide-wrapper">
     <div class="slide">
-      <h5>{project}</h5>
+      <div class="project_title"><h5>{project}</h5></div>
 
       {#each [Projects[index]] as src (index)}
       <div class="image_wrapper">
@@ -154,17 +154,9 @@
   </div>
 
   <style>
-    li {
-      padding: 0.25rem;
-    }
-    .main_slide {
-      display: flex;
-      width: 100%;
-      height: 100%;
-    }
     .heart {
-      width: 1.5rem;
-      padding: 1rem;
+      width: 2rem;
+      padding: 1.5rem;
     }
     .like_title {
       padding: 1rem;
@@ -172,35 +164,22 @@
       color: #d617bd;
       text-align: center;
     }
-    .liked_title {
-      color: #d617bd;
-    }
     .carousel {
       display: flex;
       background-color: #15202b;
-      height: 800px;
       width: 100%;
-    }
-
-    .image_wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
+      height: 850px;
     }
     .slide-wrapper {
       width: 100%;
-      height: 100%;
       display: flex;
+      padding: 1.5rem;
     }
     .slide {
-      width: 60%;
+      width: 50%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      height: 100%;
-      padding: 1rem;
     }
     .slide_section {
       width: 100%;
@@ -211,7 +190,6 @@
       display: flex;
       align-items: center;
       flex-direction: column;
-      margin-bottom: 1rem;
     }
 
     .slide_title {
@@ -219,22 +197,26 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      padding: 0.5rem;
     }
-
+    .image_wrapper {
+      display: flex;
+      justify-content: center;
+      align-content: space-between;
+      align-items: center;
+      height: 100%;
+    }
     .carousel-image {
       width: 90%;
-      height: 80%;
+      height: 90%;
     }
     .previous_wrapper {
       background-color: #21367f;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 10%;
     }
     .previous {
-      width: 60%;
+      width: 50%;
       z-index: 1;
     }
     .next_wrapper {
@@ -242,18 +224,16 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 10%;
     }
     .next {
-      width: 60%;
+      width: 50%;
       z-index: 1;
     }
     .project_buttons {
       display: flex;
       justify-content: space-around;
-      align-items: flex-end;
+      align-items: center;
       width: 100%;
-      padding: 1rem;
       height: 50%;
     }
     .code {
@@ -287,9 +267,8 @@
     .section1 {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       font-size: small;
-      height: 50%;
+      height: 100%;
       width: 100%;
       align-items: center;
     }
@@ -299,7 +278,7 @@
       font-size: small;
       align-items: center;
       justify-content: space-between;
-      height: 50%;
+      height: 100%;
       width: 100%;
     }
     .section_paragraph {
@@ -307,8 +286,8 @@
       line-height: 1.5rem;
       text-align: left;
       display: flex;
-      height: 100%;
       align-items: center;
+      height: 100%;
     }
     .section_title {
       border-bottom: 2px solid #d617bd;
@@ -326,67 +305,66 @@
       width: 100%;
     }
     .stack_list_wrapper {
-      width: 90%;
+      width: 100%;
       height: 100%;
       display: flex;
       flex-direction: column;
-      text-align: left;
-      font-size: small;
       justify-content: center;
-      line-height: 1.5rem;
-      margin-top: 1rem;
-    }
-    @media screen and (max-width: 865px) {
-      .project_buttons {
-        max-width: 100%;
-      }
+      align-items: center;
+      justify-content: space-evenly;
+      font-size: small;
+      list-style: none;
     }
     @media screen and (max-width: 768px) {
-      .carousel-image {
-        width: 60%;
-      }
       .text-section {
         display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-around;
+        flex-direction: row;
         width: 100%;
-        height: 40%;
+        height: 100%;
         border-left: none;
       }
       .section1,
       .section2 {
-        width: 50%;
+        line-height: normal;
         height: 100%;
       }
-
+      .image_wrapper {
+        width: 75%;
+        height: 65%;
+      }
       .slide {
-        height: 50%;
         width: 100%;
-        display: flex;
-        padding: inherit;
+        height: 60%;
       }
       .slide_section {
         display: flex;
         width: 100%;
-        height: 100%;
         align-items: center;
       }
       .section_paragraph {
-        text-align: center;
-        height: 100%;
-        padding: 1rem;
-        align-items: flex-start;
+        text-align: left;
       }
       .project_buttons {
-        display: flex;
-        justify-content: space-around;
         width: 100%;
+        justify-content: space-around;
       }
       .slide-wrapper {
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: space-between;
+      }
+      .stack_list_wrapper {
+        text-align: left;
+        height: 100%;
+      }
+      .section_title {
+        width: 60%;
+      }
+      .tech_title {
+        width: 60%;
+      }
+      .project_title {
+        padding: 1rem;
       }
     }
 
@@ -414,39 +392,6 @@
       }
     }
 
-    @media screen and (max-width: 668px) {
-      .slide {
-        width: 90%;
-        height: 50%;
-      }
-      .text-section {
-        height: 40%;
-        display: flex;
-        flex-direction: row;
-      }
-      .section1 {
-        width: 50%;
-        height: 100%;
-      }
-
-      .section2 {
-        height: 100%;
-        width: 50%;
-      }
-      .stack_list_wrapper {
-        width: 80%;
-        line-height: normal;
-        display: flex;
-        align-items: flex-start;
-        height: 100%;
-      }
-      li {
-        width: 100%;
-      }
-      .section_paragraph {
-        padding: 1.5rem;
-      }
-    }
     @media screen and (max-width: 445px) {
       .project_buttons {
         height: 100%;

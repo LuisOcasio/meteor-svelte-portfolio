@@ -4,7 +4,7 @@
 
 <div class="header_container">
   <img class="header" src="{src}" alt="blue-header" />
-  <h4 class="header_title">Lets Keep In Touch</h4>
+  <h3 class="header_title">Lets Keep In Touch</h3>
 </div>
 
 <footer id="contact">
@@ -85,6 +85,7 @@
     text-align: center;
     color: white;
     background-color: #15202b;
+    width: 100%;
   }
   .header_title {
     position: absolute;

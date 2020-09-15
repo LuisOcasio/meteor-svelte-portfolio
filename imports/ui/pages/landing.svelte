@@ -65,8 +65,10 @@
     max-width: 1100px;
     margin:auto;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     }
-
     li {
         list-style-type: none;
     }
@@ -77,52 +79,33 @@
     .photo_desc{
         font-size: xx-small;
         padding: 0.5rem;
+        text-align: left;
+        width: 100%;
 
     }
     .tech-icons {
         background-color: #15202b;
-        border-bottom: 2px solid gray;
-        height: 5%;
         display: flex;
         align-items: center;
-        justify-content: space-around;
-        font-size: large;
-        width: 100%;
-
+        font-size:small;
+        text-align: center;
+        width: 80%;
+        padding: 3rem;
     }
     .icon-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        padding: 1.5rem;
         height: 100%;
-        width: 100%;
+        width: 25%;
     }
-    @media screen and (max-width: 550px) {
+ 
+    @media screen and (max-width: 500px) {
         .tech-icons{
-        display: flex;
-
-        flex-wrap: wrap;
-        }
-        .icon-container{
-            width: 25%;
-        }
-    }
-    @media screen and (min-width: 375px) {
-        .tech-icons{
-            width: 100%;
-        }
-        li{
-        font-size: small;
-        }
-        .icon-container{
-            width: 25%;
-        }
-        .banner-section{
+            width: 50%;
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
-            height: 50%;
-        }   
+        }
+        .icon-container {
+            width: 25%;
+        }
     }
 </style>

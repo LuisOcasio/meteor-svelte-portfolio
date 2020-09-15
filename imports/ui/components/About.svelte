@@ -6,7 +6,7 @@
 
 <div class="about_header">
   <img class="header" src="{src}" alt="blue-header" id="about" />
-  <h4 class="about_title">About Me</h4>
+  <h3 class="about_title">About Me</h3>
 </div>
 
 <div class="about_section">
@@ -16,7 +16,7 @@
   </section>
 
   <section class="section-text">
-    <p>
+    <p class="welcome-text">
       Welcome to my portfolio!<br />
       My name is Luis.<br />
       I am fullstack web developer from Pennsylvania.
@@ -34,7 +34,6 @@
     width: 100%;
   }
   .about_section {
-    height: 700px;
     width: 100%;
     background-color: #15202b;
     display: flex;
@@ -46,27 +45,31 @@
     flex-direction: column;
   }
   .img1 {
-    padding: 2rem;
-    width: 25%;
+    padding: 1rem;
+    width: 35%;
+    height: 50%;
   }
   .section-text {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 100%;
-    width: 100%;
+    height: 50%;
+    width: 90%;
     font-size: x-large;
-    line-height: 3rem;
     align-items: center;
+    padding: 3rem;
+  }
+  .welcome-text {
+    width: 65%;
+    line-height: 3rem;
   }
   .section {
-    text-align: left;
     display: flex;
     font-size: 1.25rem;
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 50%;
     justify-content: space-around;
-    line-height: 3rem;
+    padding: 3rem;
   }
   .about_header {
     position: relative;
@@ -87,7 +90,7 @@
   .resume_button {
     background-color: #21367f;
     color: #fff;
-    width: 10%;
+    width: 15%;
     height: 32px;
     text-decoration: none;
     border-radius: 35px;
@@ -96,36 +99,18 @@
     border: 2px solid #d617bd;
     margin-right: 2rem;
     margin-bottom: 3rem;
+    margin-top: 1rem;
   }
   @media screen and (max-width: 768px) {
-    .img1 {
-      width: 80%;
-    }
-  }
-  @media screen and (max-width: 668px) {
     .section-text {
       width: 100%;
-      padding: 1rem;
-    }
-    .section {
-      display: flex;
-      flex-direction: column;
-      height: 50%;
-      width: 50%;
       text-align: center;
     }
-    .about_section {
-      display: flex;
-      flex-direction: column-reverse;
-      height: 100%;
-    }
-    @media screen and (max-width: 375px) {
-      .slide_section {
-        height: 50%;
-      }
-      .section {
-        line-height: 2rem;
-      }
+  }
+
+  @media screen and (max-width: 375px) {
+    .resume_button {
+      width: 25%;
     }
   }
 </style>
