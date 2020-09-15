@@ -112,8 +112,8 @@
           on:click|preventDefault="{handleClick}"
         />
         {:else}
+        <div></div>
         <p class="like_title">Like what you see? Give this page a like!</p>
-        <h5>{($getLikes.length)}</h5>
         <img
           class="heart"
           src="{heart}"
@@ -173,7 +173,6 @@
     .slide-wrapper {
       width: 100%;
       display: flex;
-      padding: 1.5rem;
     }
     .slide {
       width: 50%;
@@ -207,16 +206,17 @@
     }
     .carousel-image {
       width: 90%;
-      height: 90%;
+      height: 75%;
     }
     .previous_wrapper {
       background-color: #21367f;
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 5rem;
     }
     .previous {
-      width: 50%;
+      width: 75%;
       z-index: 1;
     }
     .next_wrapper {
@@ -224,17 +224,18 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 5rem;
     }
     .next {
-      width: 50%;
+      width: 75%;
       z-index: 1;
     }
     .project_buttons {
       display: flex;
       justify-content: space-around;
-      align-items: center;
+      align-items: flex-end;
       width: 100%;
-      height: 50%;
+      padding: 1rem;
     }
     .code {
       background-color: #21367f;
@@ -291,13 +292,13 @@
     }
     .section_title {
       border-bottom: 2px solid #d617bd;
-      width: 60%;
+      width: 80%;
       padding: 0.5rem;
       text-align: center;
     }
     .tech_title {
       border-bottom: 2px solid #d617bd;
-      width: 60%;
+      width: 80%;
       padding: 0.5rem;
       text-align: center;
     }
@@ -332,6 +333,10 @@
         width: 75%;
         height: 65%;
       }
+      .carousel-image {
+        width: 100%;
+        height: 100%;
+      }
       .slide {
         width: 100%;
         height: 60%;
@@ -357,65 +362,25 @@
         text-align: left;
         height: 100%;
       }
-      .section_title {
-        width: 60%;
-      }
-      .tech_title {
-        width: 60%;
-      }
       .project_title {
-        padding: 1rem;
+        margin-bottom: 2.5rem;
       }
     }
-
-    @media screen and (max-width: 375px) {
-      .project_buttons {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-      }
-    }
-    @media screen and (max-width: 489px) {
-      .section_paragraph {
-        line-height: normal;
-      }
-      .text-section {
-        display: flex;
-        height: 100%;
-        width: 100%;
-      }
-      .section_title {
-        width: 70%;
-      }
-      .tech_title {
-        width: 70%;
-      }
-    }
-
-    @media screen and (max-width: 445px) {
-      .project_buttons {
-        height: 100%;
-      }
+    @media screen and (max-width: 530px) {
       .slide {
-        width: 90%;
-        height: 40%;
+        height: 50%;
+      }
+      .like_section {
+        text-align: center;
       }
       .text-section {
-        height: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 45%;
       }
-      .section1 {
-        width: 50%;
-        height: 100%;
-      }
-
-      .section2 {
-        height: 100%;
-        width: 50%;
-      }
-      .stack_list_wrapper {
-        height: 100%;
-        width: 100%;
-        line-height: normal;
+      .section_paragraph {
+        line-height: 1rem;
+        font-size: small;
       }
     }
   </style>

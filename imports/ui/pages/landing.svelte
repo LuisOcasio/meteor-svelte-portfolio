@@ -96,12 +96,14 @@
         height: 100%;
         width: 25%;
     }
+    @media screen and (max-width: 360px) {
+    
+    }
  
     @media screen and (max-width: 500px) {
         .tech-icons{
-            width: 50%;
+            width: 100%;
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
         }
         .icon-container {

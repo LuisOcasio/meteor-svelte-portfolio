@@ -48,7 +48,7 @@
         justify-content: space-between;
         height: 50px;
         width: 100%;
-        position: sticky;
+        position: fixed;
     }
 
     .inner {     

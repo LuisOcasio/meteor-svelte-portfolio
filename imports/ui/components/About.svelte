@@ -10,18 +10,14 @@
 </div>
 
 <div class="about_section">
+  <p>Welcome to my portfolio!</p>
   <section class="section">
     <img class="img1" src="{img1}" alt="pic of me" />
+    <p>I'm Luis.</p>
     <img class="img1" src="{img2}" alt="pic of me" />
   </section>
-
+  <p>A fullstack web developer from Pennsylvania.</p>
   <section class="section-text">
-    <p class="welcome-text">
-      Welcome to my portfolio!<br />
-      My name is Luis.<br />
-      I am fullstack web developer from Pennsylvania.
-    </p>
-
     <button class="resume_button">
       <a href="https://resume.creddle.io/resume/63v349pbnj3">Resume</a>
     </button>
@@ -29,47 +25,48 @@
 </div>
 
 <style>
+  p {
+    padding: 3rem;
+    text-align: center;
+    line-height: 2rem;
+  }
   .header {
     height: 100%;
     width: 100%;
   }
   .about_section {
     width: 100%;
+    height: 100%;
     background-color: #15202b;
     display: flex;
-    align-items: center;
-    /* border-bottom: 2px solid gray; */
-    justify-content: space-between;
-    font-size: small;
-    line-height: 2.5rem;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: x-large;
+    padding: 1rem;
   }
   .img1 {
-    padding: 1rem;
-    width: 35%;
-    height: 50%;
+    width: 25%;
+    height: 25%;
   }
   .section-text {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     height: 50%;
-    width: 90%;
+    width: 100%;
     font-size: x-large;
-    align-items: center;
-    padding: 3rem;
   }
   .welcome-text {
-    width: 65%;
-    line-height: 3rem;
+    width: 100%;
+    line-height: 2.5rem;
+    margin-left: 20%;
   }
   .section {
-    display: flex;
-    font-size: 1.25rem;
     width: 90%;
     height: 50%;
+    display: flex;
     justify-content: space-around;
-    padding: 3rem;
+    align-items: center;
   }
   .about_header {
     position: relative;
@@ -97,9 +94,7 @@
     font-size: medium;
     align-self: flex-end;
     border: 2px solid #d617bd;
-    margin-right: 2rem;
-    margin-bottom: 3rem;
-    margin-top: 1rem;
+    margin: 1rem 1rem 1rem;
   }
   @media screen and (max-width: 768px) {
     .section-text {
