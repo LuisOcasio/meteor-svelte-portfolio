@@ -42,13 +42,13 @@
 
   const projects_about = [
     {
-      0: "A Headless WordPress site created for a client in the music industry. This website allows users to stream and downloaded music across various devices thanks to its custom media player.  ",
+      0: "",
     },
     {
-      1: "Single page application created for a local coffee shop business. This applicaton takes full advantage of react and the react-router library to render components and routes on the client rather than fetching data from a server.",
+      1: "",
     },
     {
-      2: "An 8 week long project that included 5 other developers and a UX designer. Market Avenue is an application that brings local vendors and locals closer.",
+      2: "",
     },
   ];
 
@@ -70,6 +70,8 @@
   let total = 0;
 
   $: getLikes = useTracker(() => Likes.find({}).fetch());
+
+  export let get_Likes;
 
   function handleClick() {
     Likes.insert({
@@ -93,7 +95,9 @@
   <!-- slide section -->
   <div class="slide-wrapper">
     <div class="slide">
-      <div class="project_title"><h5>{project}</h5></div>
+      <div class="project_title">
+        <h5>{project}</h5>
+      </div>
 
       {#each [Projects[index]] as src (index)}
       <div class="image_wrapper">

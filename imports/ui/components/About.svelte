@@ -13,22 +13,25 @@
   <p>Welcome to my portfolio!</p>
   <section class="section">
     <img class="img1" src="{img1}" alt="pic of me" />
-    <p>I'm Luis.</p>
+    <section class="section-text">
+      <p>I am Luis J Ocasio.</p>
+      <button class="resume_button">
+        <a href="https://resume.creddle.io/resume/63v349pbnj3"
+          >View luis's Resume</a
+        >
+      </button>
+    </section>
     <img class="img1" src="{img2}" alt="pic of me" />
   </section>
   <p>A fullstack web developer from Pennsylvania.</p>
-  <section class="section-text">
-    <button class="resume_button">
-      <a href="https://resume.creddle.io/resume/63v349pbnj3">Resume</a>
-    </button>
-  </section>
 </div>
 
 <style>
   p {
-    padding: 3rem;
+    padding: 1.5rem;
     text-align: center;
     line-height: 2rem;
+    width: 100%;
   }
   .header {
     height: 100%;
@@ -53,8 +56,9 @@
     display: flex;
     flex-direction: column;
     height: 50%;
-    width: 100%;
+    width: 50%;
     font-size: x-large;
+    align-items: center;
   }
   .welcome-text {
     width: 100%;
@@ -65,7 +69,7 @@
     width: 90%;
     height: 50%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
   }
   .about_header {
@@ -85,16 +89,13 @@
   }
 
   .resume_button {
-    background-color: #21367f;
     color: #fff;
-    width: 15%;
-    height: 32px;
-    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    text-decoration: underline;
     border-radius: 35px;
     font-size: medium;
-    align-self: flex-end;
-    border: 2px solid #d617bd;
-    margin: 1rem 1rem 1rem;
+    background-color: #15202b;
   }
   @media screen and (max-width: 768px) {
     .section-text {

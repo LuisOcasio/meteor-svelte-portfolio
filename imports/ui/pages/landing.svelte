@@ -9,7 +9,7 @@
 </script>
 
 <div class="wrapper">
-    <NavBar />
+    <NavBar/>
     <div class="banner-section" id='home'>
         <img class="banner" alt={desc} src={src} />
     </div>

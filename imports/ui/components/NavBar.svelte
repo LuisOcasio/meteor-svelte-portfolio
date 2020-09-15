@@ -3,6 +3,8 @@
 
     let showMobileMenu = false
 
+    let today = new Date().toLocaleDateString()
+
     const navItems = [
         { label: 'Skills', href: '#' },
         { label: 'Projects', href: '#' },
@@ -24,11 +26,11 @@
 </script>
 
 <nav>
-    <div class="inner">
-        <h5>Full stack web developer</h5>
+    <div class="inner">        
+            <h5>Full stack web developer</h5>
         <div
             on:click={handleMobileIconClick}
-            class={`mobile-icon${showMobileMenu ? ' active' : ''}`}        >
+            class={`mobile-icon${showMobileMenu ? ' active' : ''}`}>
             <div class="middle-line" />
             <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
                 <a href="#home">Top of Page</a>
@@ -47,8 +49,9 @@
         display: flex;
         justify-content: space-between;
         height: 50px;
-        width: 100%;
+        max-width: 1100px;
         position: fixed;
+        width: 100%;
     }
 
     .inner {     
